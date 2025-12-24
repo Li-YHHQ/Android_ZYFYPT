@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_light"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 顶部渐变背景区域 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_purple"
+                android:orientation="vertical"
+                android:paddingTop="32dp"
+                android:paddingBottom="40dp"
+                android:paddingHorizontal="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 头像 - 带边框 -->
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="@android:color/white">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="92dp"
+                            android:layout_height="92dp"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="46dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:id="@+id/iv_avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/user" />
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+
+                <!-- 姓名 -->
+                <TextView
+                    android:id="@+id/tv_owner_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="李松伦"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp" />
+
+                <!-- 学号标签 -->
+                <TextView
+                    android:id="@+id/tv_owner_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:text="ID: 23001010613"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/white"
+                    android:alpha="0.9"
+                    android:background="@drawable/bg_tag_user_type" />
+            </LinearLayout>
+
+            <!-- 功能菜单卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="-24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/background_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <!-- 我的收藏 -->
+                    <LinearLayout
+                        android:id="@+id/tv_owner_favorite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="48dp"
+                            android:layout_height="48dp">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_icon_yellow" />
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_star"
+                                app:tint="@color/warning" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:text="我的收藏"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="80dp"
+                        android:background="@color/divider" />
+
+                    <!-- 我的关注 -->
+                    <LinearLayout
+                        android:id="@+id/tv_owner_focus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="48dp"
+                            android:layout_height="48dp">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_icon_blue" />
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_owner"
+                                app:tint="@color/info" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:text="我的关注"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="80dp"
+                        android:background="@color/divider" />
+
+                    <!-- 设置 -->
+                    <LinearLayout
+                        android:id="@+id/tv_owner_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <FrameLayout
+                            android:layout_width="48dp"
+                            android:layout_height="48dp">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_icon_gray" />
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_settings"
+                                app:tint="@color/text_secondary" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:text="设置"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 退出登录按钮 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tv_owner_logout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:text="退出登录"
+                android:textSize="16sp"
+                android:textColor="@color/error"
+                app:backgroundTint="@color/background_card"
+                app:cornerRadius="16dp"
+                app:strokeColor="@color/error"
+                app:strokeWidth="1.5dp"
+                app:elevation="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

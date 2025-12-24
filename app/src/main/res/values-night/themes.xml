@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme - Dark -->
+    <style name="Base.Theme.ZYFYPT617wagntao" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/background_card_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnPrimary">@color/background_dark</item>
+        <item name="colorOnSecondary">@color/background_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+        <item name="android:statusBarColor">@color/background_dark</item>
+    </style>
+    
+    <!-- 设置页面主题 - 暗色 -->
+    <style name="Theme.Settings" parent="Theme.ZYFYPT617wagntao">
+        <item name="android:windowBackground">@color/background_dark</item>
+    </style>
+</resources>

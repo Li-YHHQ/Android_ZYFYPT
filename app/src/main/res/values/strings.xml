@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">教学资源平台</string>
+    <string name="article_toolbar_title">教学资源平台</string>
+    <string name="article_default_title">文章详情</string>
+    <string name="article_author_label">作者 / 机构</string>
+    <string name="article_collect">收藏</string>
+    <string name="article_focus">关注</string>
+    <string name="article_collect_desc">切换文章收藏状态</string>
+    <string name="article_focus_desc">关注作者或资源提供者</string>
+    <string name="article_avatar_desc">作者头像</string>
+    <string name="article_play_desc">点击播放文章视频</string>
+    
+    <!-- 设置页面 -->
+    <string name="settings_title">设置</string>
+    <string name="settings_display">显示设置</string>
+    <string name="settings_theme">主题模式</string>
+    <string name="settings_theme_light">浅色模式</string>
+    <string name="settings_theme_dark">深色模式</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_font_size">字体大小</string>
+    <string name="settings_font_small">小</string>
+    <string name="settings_font_normal">标准</string>
+    <string name="settings_font_large">大</string>
+    <string name="settings_font_extra_large">特大</string>
+    <string name="settings_playback">播放设置</string>
+    <string name="settings_auto_play">自动播放视频</string>
+    <string name="settings_auto_play_desc">进入详情页自动播放</string>
+    <string name="settings_storage">存储设置</string>
+    <string name="settings_cache_enabled">启用缓存</string>
+    <string name="settings_cache_enabled_desc">缓存资源以加快加载速度</string>
+    <string name="settings_clear_cache">清除缓存</string>
+    <string name="settings_notification">通知设置</string>
+    <string name="settings_push_notification">推送通知</string>
+    <string name="settings_push_notification_desc">接收新资源和更新通知</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_version">版本</string>
+    
+    <!-- 空状态 -->
+    <string name="empty_title">暂无数据</string>
+    <string name="empty_message">快去探索更多内容吧</string>
+    <string name="empty_collect">还没有收藏任何内容</string>
+    <string name="empty_follow">还没有关注任何人</string>
+    <string name="error_title">加载失败</string>
+    <string name="error_network">网络连接失败，请检查网络设置</string>
+    <string name="btn_retry">重试</string>
+    <string name="btn_refresh">刷新</string>
+    
+    <!-- 通用 -->
+    <string name="loading">加载中...</string>
+    <string name="calculating">计算中...</string>
+    <string name="clearing">清理中...</string>
+    <string name="cache_cleared">缓存已清除</string>
+    <string name="cache_clear_failed">清除缓存失败</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    
+    <!-- 个人中心 -->
+    <string name="owner_title">我的</string>
+    <string name="owner_collect">我的收藏</string>
+    <string name="owner_focus">我的关注</string>
+    <string name="owner_settings">设置</string>
+    <string name="owner_logout">退出登录</string>
+    <string name="logout_success">已注销登录</string>
+    <string name="logout_failed">注销失败</string>
+    <string name="not_logged_in">当前未登录</string>
+</resources>

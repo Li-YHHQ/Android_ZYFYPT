@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- 顶部标题栏 -->
+    <LinearLayout
+        android:id="@+id/headerBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:elevation="4dp"
+        android:background="?attr/colorSurface"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="?attr/colorOnSurface"
+            android:contentDescription="返回" />
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="资源详情"
+            android:textSize="18sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- 关注按钮 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:text="关注"
+            android:textSize="12sp"
+            android:paddingHorizontal="16dp"
+            app:cornerRadius="18dp"
+            app:backgroundTint="@color/colorPrimary"
+            style="@style/Widget.MaterialComponents.Button" />
+
+        <!-- 收藏按钮 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="收藏"
+            android:textSize="12sp"
+            android:textColor="@color/warning"
+            android:paddingHorizontal="16dp"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/warning"
+            app:strokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </LinearLayout>
+
+    <!-- 隐藏的文本视图用于兼容 -->
+    <TextView
+        android:id="@+id/tv_follow_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_collect_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 预览区域 - 隐藏，不显示封面 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/preview_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/background_dark"
+                android:visibility="gone">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager_resource_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- PDF 查看器 - 直接显示在页面内 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pdf_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- PDF标题栏和控制按钮 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:background="@color/colorPrimary">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_keynote"
+                            app:tint="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_pdf_page"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="第 1 页"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                        <!-- 上一页按钮 -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pdf_prev"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:text="上一页"
+                            android:textSize="12sp"
+                            android:layout_marginEnd="8dp"
+                            app:cornerRadius="16dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@android:color/white"
+                            android:textColor="@android:color/white" />
+
+                        <!-- 下一页按钮 -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pdf_next"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:text="下一页"
+                            android:textSize="12sp"
+                            app:cornerRadius="16dp"
+                            style="@style/Widget.MaterialComponents.Button"
+                            app:backgroundTint="@android:color/white"
+                            android:textColor="@color/colorPrimary" />
+                    </LinearLayout>
+
+                    <com.github.barteksc.pdfviewer.PDFView
+                        android:id="@+id/pdf_viewer"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:background="@color/background_dark" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 视频播放器 - 直接显示在页面内 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/video_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:id="@+id/video_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/background_dark">
+
+                    <VideoView
+                        android:id="@+id/video_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center" />
+
+                    <include
+                        layout="@layout/custom_media_controller"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 内容卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/tv_resource_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="4dp" />
+
+                    <!-- 作者信息 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_person"
+                            app:tint="?android:attr/textColorSecondary" />
+
+                        <TextView
+                            android:id="@+id/tv_resource_author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- 时间 -->
+                    <TextView
+                        android:id="@+id/tv_resource_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="12sp" />
+
+                    <!-- 分割线 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="16dp"
+                        android:background="@color/divider" />
+
+                    <!-- 描述 -->
+                    <TextView
+                        android:id="@+id/tv_resource_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="15sp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <!-- 内容 -->
+                    <TextView
+                        android:id="@+id/tv_resource_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 附件卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:cardBackgroundColor="@color/tag_blue">
+
+                <TextView
+                    android:id="@+id/tv_resource_attach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textColor="@color/tag_blue_text"
+                    android:textSize="14sp"
+                    android:drawableStart="@drawable/ic_info"
+                    android:drawablePadding="8dp"
+                    android:visibility="gone" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- WebView 内容 -->
+            <WebView
+                android:id="@+id/webview_resource_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                android:background="?attr/colorSurface" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

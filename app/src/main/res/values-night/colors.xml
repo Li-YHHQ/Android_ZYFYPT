@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 深色模式颜色覆盖 -->
+    
+    <!-- 背景色 - 深色模式 -->
+    <color name="background_light">#121212</color>
+    <color name="background_card">#1E1E1E</color>
+    <color name="background_dark">#000000</color>
+    <color name="background_card_dark">#2D2D2D</color>
+    
+    <!-- 文字颜色 - 深色模式（确保清晰可见） -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#E0E0E0</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#E0E0E0</color>
+    
+    <!-- 分割线 - 深色模式 -->
+    <color name="divider">#424242</color>
+    <color name="divider_dark">#616161</color>
+    
+    <!-- 标签颜色 - 深色模式（保持可见性） -->
+    <color name="tag_blue">#1E3A5F</color>
+    <color name="tag_blue_text">#90CAF9</color>
+    <color name="tag_pink">#4A1942</color>
+    <color name="tag_pink_text">#F8BBD9</color>
+    <color name="tag_green">#1B4332</color>
+    <color name="tag_green_text">#A5D6A7</color>
+    <color name="tag_purple">#2D1B4E</color>
+    <color name="tag_purple_text">#CE93D8</color>
+    
+    <!-- 按钮颜色 - 深色模式 -->
+    <color name="button_primary">#7C4DFF</color>
+    <color name="button_primary_pressed">#651FFF</color>
+    <color name="button_secondary">#424242</color>
+    <color name="button_secondary_pressed">#616161</color>
+    
+    <!-- 骨架屏颜色 - 深色模式 -->
+    <color name="skeleton_base">#2D2D2D</color>
+    <color name="skeleton_highlight">#424242</color>
+    
+    <!-- 状态颜色 - 深色模式（保持可见性） -->
+    <color name="success">#69F0AE</color>
+    <color name="warning">#FFD54F</color>
+    <color name="error">#FF5252</color>
+    <color name="info">#64B5F6</color>
+</resources>

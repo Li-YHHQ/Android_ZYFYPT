@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 基础颜色 -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- 主色调 - 现代紫色系 -->
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_200">#FFBB86FC</color>
+    
+    <!-- 主题色 -->
+    <color name="colorPrimary">#6366F1</color>
+    <color name="colorPrimaryDark">#4F46E5</color>
+    <color name="colorPrimaryLight">#A5B4FC</color>
+    <color name="colorAccent">#10B981</color>
+    <color name="colorSecondary">#06B6D4</color>
+    
+    <!-- 背景色 -->
+    <color name="background_light">#F8FAFC</color>
+    <color name="background_card">#FFFFFF</color>
+    <color name="background_dark">#1E293B</color>
+    <color name="background_card_dark">#334155</color>
+    
+    <!-- 文字颜色 -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_primary_dark">#F1F5F9</color>
+    <color name="text_secondary_dark">#94A3B8</color>
+    
+    <!-- 分割线 -->
+    <color name="divider">#E2E8F0</color>
+    <color name="divider_dark">#475569</color>
+    
+    <!-- 状态颜色 -->
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+    <color name="info">#3B82F6</color>
+    
+    <!-- 标签颜色 -->
+    <color name="tag_blue">#DBEAFE</color>
+    <color name="tag_blue_text">#1D4ED8</color>
+    <color name="tag_pink">#FCE7F3</color>
+    <color name="tag_pink_text">#BE185D</color>
+    <color name="tag_green">#D1FAE5</color>
+    <color name="tag_green_text">#047857</color>
+    <color name="tag_purple">#EDE9FE</color>
+    <color name="tag_purple_text">#6D28D9</color>
+    
+    <!-- 按钮颜色 -->
+    <color name="button_primary">#6366F1</color>
+    <color name="button_primary_pressed">#4F46E5</color>
+    <color name="button_secondary">#E2E8F0</color>
+    <color name="button_secondary_pressed">#CBD5E1</color>
+    
+    <!-- 骨架屏颜色 -->
+    <color name="skeleton_base">#E2E8F0</color>
+    <color name="skeleton_highlight">#F1F5F9</color>
+</resources>
